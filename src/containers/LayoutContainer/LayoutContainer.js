@@ -1,17 +1,21 @@
 import React,{useState} from 'react';
+import Routes from '../../router/Routes';
+import './LayoutContainer.scss';
 import LayoutFooterComponent from './components/LayoutFooterComponent/LayoutFooterComponent';
 import LayoutNavBarComponent from './components/LayoutNavBarComponent/LayoutNavBarComponent';
 
 
-function LayoutContainer(){
+
+function LayoutContainer(props){
 const [isLoading,setIsLoading]=useState(false);
 
 return (
-    <div className={"container"}>
-        <LayoutNavBarComponent></LayoutNavBarComponent>
-        <div className="container is-flex custom-content-place is-text-green">
-            here content place
-            {this.props.children}
+    <div className={"site-custom"}>
+        <LayoutNavBarComponent></LayoutNavBarComponent>       
+        <div className={"site-custom-content"}>
+         
+            <Routes />
+            
         </div>
         <LayoutFooterComponent></LayoutFooterComponent>
     </div>
